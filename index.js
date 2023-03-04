@@ -22,37 +22,41 @@ const displayCountries = data => {
     //     1.${ai.features[1]}
     //     2.${ai.features[2]}
     //     3.${ai.features[3]}
-        
+
     //     ${ai.name}
     //     ${ai.published_in}
-       
+
     //     `;
-       
+
     //     aiDiv.appendChild(p)
     // }
- ais.forEach(ai =>{
-    // console.log(ai);
-    const div = document.createElement('div');
-    div.classList.add('ai')
-    div.innerHTML = `
-    ${ai.image}
-      <h3>  ${ai.id}</h3>
+    ais.forEach(ai => {
+        // console.log(ai);
+        const div = document.createElement('div');
+        div.classList.add('ai')
+        div.innerHTML = `
+    <img width="370px" height="200px" src="${ai.image}">
        <h5> Features:</h5>
-        <p> 1.${ai.features[0]} </p>
-        <p> 2.${ai.features[1]} </p>
-        <p> 3.${ai.features[2]} </p>
+        <p> 1.${ai.features[0]} </br>
+            2.${ai.features[1]} </br>
+            3.${ai.features[2]} </p>
         
         <h3>  ${ai.name}</h3> 
        <h6> ${ai.published_in}</h6>
-        <button onClick="loadAIByName('${ai.id}')">Details</button>
+        <button onClick="loadAIByName('${ai.name}')">Details</button>
        
     `
-    aiDiv.appendChild(div)
- })
+        aiDiv.appendChild(div)
+    })
 }
 
-const loadAIByName = id =>{
-    const url = `https://openapi.programming-hero.com/api/ai/tool/01}`
+const loadAIByName = name => {
+    const url = `https://openapi.programming-hero.com/api/ai/tool/${name}}`
+    console.log(url)
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data[0])
+        );
 }
 
 loadCountries();
