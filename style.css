@@ -16,6 +16,9 @@
     padding: 20px;
 }
 
-.country img{
-    width: 200px;
+.ai img{
+    width: 370px;
+    height: 200px;
+    border-radius: 20px;
+  
 }

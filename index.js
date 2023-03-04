@@ -35,7 +35,7 @@ const displayCountries = data => {
         const div = document.createElement('div');
         div.classList.add('ai')
         div.innerHTML = `
-    <img width="370px" height="200px" src="${ai.image}">
+    <img  src="${ai.image}">
        <h5> Features:</h5>
         <p> 1.${ai.features[0]} </br>
             2.${ai.features[1]} </br>
@@ -43,7 +43,7 @@ const displayCountries = data => {
         
         <h3>  ${ai.name}</h3> 
        <h6> ${ai.published_in}</h6>
-        <button onClick="loadAIByName('${ai.name}')">Details</button>
+        <button onClick="loadAIByName('${ai.name}')">&rarr;</button>
        
     `
         aiDiv.appendChild(div)
