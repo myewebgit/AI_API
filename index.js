@@ -1,15 +1,14 @@
 
-const loadCountries = () => {
+const loadAIs = () => {
     fetch('https://openapi.programming-hero.com/api/ai/tools')
         .then(res => res.json())
-        .then(data => displayCountries(data)
+        .then(data => displayAIs(data)
         );
 }
-
-const displayCountries = data => {
+loadAIs();
+const displayAIs = data => {
     const ais = data.data.tools;
-    console.log(data.data.tools);
-
+    // console.log(data.data.tools);
     const aiDiv = document.getElementById('aiHub');
     // for (const ai of ais) {
     //     console.log(ai.name)
@@ -43,21 +42,18 @@ const displayCountries = data => {
         
         <h3>  ${ai.name}</h3> 
        <h6> ${ai.published_in}</h6>
-        <button onClick="loadAIByName('${ai.name}')">&rarr;</button>
+        <button onClick="loadAIByName('${ai.id}')">&rarr;</button>
        
     `
         aiDiv.appendChild(div)
     })
 }
 
-const loadAIByName = name => {
-    const url = `https://openapi.programming-hero.com/api/ai/tool/${name}}`
-    console.log(url)
-    fetch(url)
-        .then(res => res.json())
-        .then(data => console.log(data[0])
-        );
+const loadAIByName = id => {
+        fetch(`https://openapi.programming-hero.com/api/ai/tool/${id}`)
+    .then(res => res.json())
+    .then(data => console.log(data))
 }
 
-loadCountries();
+
 console.log('js connected')
