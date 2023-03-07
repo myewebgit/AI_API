@@ -12,7 +12,7 @@ const displayAIs = data => {
   const ais = data.data.tools;
   // console.log(data.data.tools);
   const aiDiv = document.getElementById('aiHub');
-    ais.forEach(ai => {
+  ais.forEach(ai => {
     // console.log(ai);
     const div = document.createElement('div');
     div.classList.add('ai')
@@ -40,7 +40,6 @@ const loadAIByName = id => {
 }
 
 /////////// Modal ///////////////
-
 var modalWrap = null;
 const showModal = (ai) => {
   const aih = ai.data;
@@ -48,7 +47,6 @@ const showModal = (ai) => {
   if (modalWrap !== null) {
     modalWrap.remove();
   }
-
   modalWrap = document.createElement('div');
   modalWrap.innerHTML = `
 
@@ -60,9 +58,11 @@ const showModal = (ai) => {
               data-bs-dismiss="modal" aria-label="Close"></button>
           
           <div class="modal-body">
+
               <div class="row row-cols-1 ">
                   <div class="col">
                       <div class="card">
+                      <p class="bg-success position-absolute top-0 end-0 badge rounded-pill translate-middle  p-2 fw-bold">score: ${aih.accuracy.score}</p>
                           <img src="${aih.image_link[0]}" class="card-img-top" alt="...">
                           <div class="card-body">
                               <h5 class="card-title my-3 p-3">${aih.description}</h5>
