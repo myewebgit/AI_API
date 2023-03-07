@@ -1,20 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container p-3">
         <button class="btn btn-danger" onclick="showModal()">Modal</button>
     </div>
 
+    <!-- modal// -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="modal" tabindex="1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button"
+                    class="position-absolute top-0 start-100 translate-middle btn-close bg-danger rounded-circle"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-cols-1 ">
+                        <div class="col">
+                            <div class="card">
+                                <img src="${aih.image_link[0]}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">${aih.description}</h5>
+                                    <div class="card-group">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <small class="text-info mx-2"> ${aih.pricing[0].price} </small>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <small class="text-warning"> ${aih.pricing[1].price} </small>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <small class="text-danger"> ${aih.pricing[2].price} </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-1 row-cols-md-2 g-2">
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                    <h3>Features</h3>
+                                                    <p> 1.${aih.features[1].feature_name}</br>
+                                                        2.${aih.features[2].feature_name}</br>
+                                                        3.${aih.features[2].feature_name}</p>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <p class="card-text">
+                                                    <h5>Integrations:</h5>
+                                                    <p>1.${aih.integrations[0]}</br>
+                                                        2.${aih.integrations[0]}</br>
+                                                        3.${aih.integrations[0]}</p>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-    <script src="modal.js"></script>
+
+                                <script
+                                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                                    crossorigin="anonymous"></script>
+
+                                <script src="modal.js"></script>
 </body>
+
 </html>
